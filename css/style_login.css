@@ -1,0 +1,100 @@
+  body{
+    margin: 0px;
+    height: auto;
+    background-color: rgba(28, 86, 121, 1);
+    width: auto;
+}
+
+img{
+    width: 60em;
+    height: 100vh;
+    filter:brightness(0.8)
+}
+
+
+.interface_inicial{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+h2{
+    font-size: 1.5em;
+}
+
+.secao_login{
+    width: 22em;
+    height: 25.6em;
+    background-color: #1c5679;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    
+}
+
+.nome_sistema{
+    text-align: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    background-color: #1c5679;
+    width: 20em;
+    height: 20em;
+    border: 3px solid #fff;
+    align-items: stretch;
+    border-radius: 5%;
+    padding: 1em;
+}
+
+
+label{
+    font-size: larger;
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-around;
+}
+
+input{
+    width: 22em;
+    height: 2.2em;
+    border-radius: 5px;
+    border:0px;
+    font-size: large;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.entrar{
+    border-radius: 5px;
+    border:0px;
+    margin-top: 30px;
+    width: 5em;
+    height: 2em;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-left: 41%;
+}
+
+.entrar:hover{
+    background-color:#d3d3d3;
+    width: 5.2em;
+    height: 2.2em;
+    color: #fff;
+    transition:  all 2ms ease;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
