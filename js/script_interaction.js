@@ -136,7 +136,7 @@ async function login_autorization(){
     const password_user = document.getElementById("password")
 
     try{
-        const response_system = await fetch("https://stockbridges.onrender.com/login",{
+        const response_system = await fetch("https://stockbridges.onrender.com/homepage",{
              method: "POST",
              headers:{"Content-Type": "application/json"},
              body: JSON.stringify({   
