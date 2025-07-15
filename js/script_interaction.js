@@ -131,6 +131,35 @@ function close_sub_windows(id){
 
 //================ adicionando a função ao botão de cadastramento ================================================
 
+async function login_autorization(){
+    const user_name = document.getElementById("username")
+    const password_user = document.getElementById("password")
+
+    try{
+        const response_system = await fetch("https://stockbridges.onrender.com/login",{
+             method: "POST",
+             headers:{"Content-Type": "application/json"},
+             body: JSON.stringify({   
+                                    usuario: user_name.value,
+                                    senha: password_user.value
+                                })
+        })
+
+        const data = await response_system.json();
+        
+        if (data.status === "ok"){
+            window.location.href = "/homepage.html"
+        } else{
+            document.getElementById("mensagem-erro").textContent = data.mensagem || "Usuário ou senha inválidos.";
+        }
+
+    }catch (erro) {
+    console.error("Erro ao fazer login:", erro);
+    document.getElementById("mensagem-erro").textContent = "Erro de conexão com o servidor.";
+  }
+}
+
+
 function SetupRegister(new_register, new_worker, new_product, button_register_worker, button_register_products, confirm_mensage){
     if (new_register){
         new_register.addEventListener('click', function(){
