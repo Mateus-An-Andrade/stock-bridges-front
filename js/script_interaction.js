@@ -148,7 +148,7 @@ async function login_autorization(){
         const data = await response_system.json();
         
         if (data.status === "ok"){
-            window.location.href = "/homepage.html"
+            window.location.href = "/main.html"
         } else{
             document.getElementById("mensagem-erro").textContent = data.mensagem || "Usuário ou senha inválidos.";
         }
