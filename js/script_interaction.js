@@ -129,7 +129,14 @@ function close_sub_windows(id){
 
 
 
-//================ adicionando a função ao botão de cadastramento ================================================
+//================ adicionando a função de login ================================================
+
+login_form = document.getElementById("login_form")
+
+login_form.addEventListener("submit",function(e){
+    e.preventDefault();
+    login_autorization();
+})
 
 async function login_autorization(){
     const user_name = document.getElementById("username")
@@ -158,6 +165,8 @@ async function login_autorization(){
     document.getElementById("mensagem-erro").textContent = "Erro de conexão com o servidor.";
   }
 }
+
+//================ adicionando a função ao botão de cadastramento ================================================
 
 
 function SetupRegister(new_register, new_worker, new_product, button_register_worker, button_register_products, confirm_mensage){
