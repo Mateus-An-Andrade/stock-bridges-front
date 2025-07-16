@@ -152,6 +152,8 @@ async function login_autorization(){
                                 })
         })
 
+        console.log("Resposta recebida:", data);
+
         const data = await response_system.json();
         
         if (data.status === "ok"){
