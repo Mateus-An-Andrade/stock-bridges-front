@@ -144,7 +144,7 @@ async function login_autorization(){
 
     try{
         const response_system = await fetch("https://stockbridges.onrender.com/main",{
-             method: "POST",
+             method: "GET",
              headers:{"Content-Type": "application/json"},
              body: JSON.stringify({   
                                     usuario: user_name.value,
