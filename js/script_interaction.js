@@ -131,41 +131,33 @@ function close_sub_windows(id){
 
 //================ adicionando a função de login ================================================
 
-login_form = document.getElementById("login_form")
-
-login_form.addEventListener("submit",function(e){
-    e.preventDefault();
-    login_autorization();
-})
-
 async function login_autorization(){
     const user_name = document.getElementById("username")
     const password_user = document.getElementById("password")
 
-    try{
-        const response_system = await fetch("https://stockbridges.onrender.com/main",{
-             method: "POST",
-             headers:{"Content-Type": "application/json"},
-             body: JSON.stringify({   
-                                    usuario: user_name.value,
-                                    senha: password_user.value
-                                })
-        })
+    try {
+        const response_system = await fetch("https://stockbridges.onrender.com/main", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                usuario: user_name.value,
+                senha: password_user.value
+            })
+        });
 
         const data = await response_system.json();
         console.log("Resposta recebida:", data);
 
-
-        if (data.status === "ok"){
-            window.location.href = "/main.html"
-        } else{
-            document.getElementById("mensagem-erro").textContent = data.mensagem || "Usuário ou senha inválidos.";
+        if (data.status === "ok") {
+            window.location.href = "/main.html";
+        } else {
+            alert(data.mensagem || "Usuário ou senha inválidos.");
         }
 
-    }catch (erro) {
-    console.error("Erro ao fazer login:", erro);
-    document.getElementById("mensagem-erro").textContent = "Erro de conexão com o servidor.";
-  }
+    } catch (erro) {
+        console.error("Erro ao fazer login:", erro);
+        alert("Erro de conexão com o servidor.");
+    }
 }
 
 //================ adicionando a função ao botão de cadastramento ================================================
