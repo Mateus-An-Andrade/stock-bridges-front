@@ -143,7 +143,7 @@ async function login_autorization(){
     const password_user = document.getElementById("password")
 
     try{
-        const response_system = await fetch("https://stockbridges.onrender.com/",{
+        const response_system = await fetch("https://stockbridges.onrender.com/main",{
              method: "POST",
              headers:{"Content-Type": "application/json"},
              body: JSON.stringify({   
@@ -152,10 +152,10 @@ async function login_autorization(){
                                 })
         })
 
+        const data = await response_system.json();
         console.log("Resposta recebida:", data);
 
-        const data = await response_system.json();
-        
+
         if (data.status === "ok"){
             window.location.href = "/main.html"
         } else{
