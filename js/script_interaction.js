@@ -149,7 +149,7 @@ async function login_autorization(){
         console.log("Resposta recebida:", data);
 
         if (data.status === "ok") {
-            window.location.href = "/main.html";
+            window.location.href = "https://stockbridges.vercel.app/main.html";
         } else {
             alert(data.mensagem || "Usuário ou senha inválidos.");
         }
